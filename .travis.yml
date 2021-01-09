@@ -1,9 +1,5 @@
 sudo: required
 
-dist: xenial
-
-os: linux
-
 language: generic
 
 services:
