@@ -1,3 +1,5 @@
+sudo: required
+
 dist: xenial
 
 os: linux
@@ -15,6 +17,7 @@ script:
   - docker run -e CI=true ckddn9496/docker-react-app npm run test -- --coverage
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: us-east-2
   app: docker-react-app
