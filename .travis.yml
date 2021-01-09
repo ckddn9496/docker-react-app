@@ -1,4 +1,5 @@
-sudo: required
+# sudo deprecated
+# sudo: required
 
 language: generic
 
@@ -6,7 +7,7 @@ services:
   - docker
 
 before_install:
-  - echo "start creating an image with dockerfile!"
+  - echo "start creating an image with dockerfile"
   - docker build -t ckddn9496/docker-react-app -f Dockerfile.dev .
 
 script:
@@ -18,7 +19,7 @@ deploy:
   region: us-east-2
   app: docker-react-app
   env: DockerReactApp-env
-  bucket_name: elasticbeanstalk-us-east-2-721391760496
+  bucket: elasticbeanstalk-us-east-2-721391760496
   bucket_path: docker-react-app
   on:
     branch: master
